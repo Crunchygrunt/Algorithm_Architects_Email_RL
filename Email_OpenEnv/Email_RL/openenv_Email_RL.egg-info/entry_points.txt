@@ -1,2 +1,0 @@
-[console_scripts]
-server = Email_RL.server.app:main
