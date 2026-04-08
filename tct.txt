@@ -1,0 +1,73 @@
+python inference.py
+[START] task=spam-detection env=Email_RL model=qwen/qwen-2.5-72b-instruct
+[STEP] step=1 action=priority=low,category=newsletter,route=inbox reward=0.99 done=false error=null
+[STEP] step=2 action=priority=low,category=newsletter,route=inbox reward=0.99 done=false error=null
+[STEP] step=3 action=priority=low,category=spam,route=trash reward=0.99 done=false error=null
+[STEP] step=4 action=priority=medium,category=support,route=support_team reward=0.99 done=false error=null
+[STEP] step=5 action=priority=urgent,category=security,route=security_team reward=0.99 done=false error=null
+[STEP] step=6 action=priority=high,category=sales,route=sales_team reward=0.99 done=false error=null
+[STEP] step=7 action=priority=low,category=spam,route=trash reward=0.99 done=false error=null
+[STEP] step=8 action=priority=urgent,category=security,route=security_team reward=0.99 done=false error=null
+[STEP] step=9 action=priority=low,category=newsletter,route=inbox reward=0.99 done=false error=null
+[STEP] step=10 action=priority=high,category=security,route=security_team reward=0.99 done=true error=null
+[END] success=true steps=10 score=0.990 rewards=0.99,0.99,0.99,0.99,0.99,0.99,0.99,0.99,0.99,0.99
+[START] task=priority-classification env=Email_RL model=qwen/qwen-2.5-72b-instruct
+[STEP] step=1 action=priority=medium,category=internal,route=inbox reward=0.99 done=false error=null
+[STEP] step=2 action=priority=urgent,category=security,route=security_team reward=0.99 done=false error=null
+[STEP] step=3 action=priority=urgent,category=security,route=security_team reward=0.99 done=false error=null
+[STEP] step=4 action=priority=low,category=spam,route=archive reward=0.99 done=false error=null
+[STEP] step=5 action=priority=high,category=sales,route=sales_team reward=0.01 done=false error=null
+[STEP] step=6 action=priority=low,category=spam,route=archive reward=0.99 done=false error=null
+[STEP] step=7 action=priority=low,category=spam,route=archive reward=0.99 done=false error=null
+[STEP] step=8 action=priority=low,category=internal,route=archive reward=0.99 done=false error=null
+[STEP] step=9 action=priority=medium,category=sales,route=sales_team reward=0.99 done=false error=null
+[STEP] step=10 action=priority=high,category=internal,route=human_review reward=0.01 done=true error=null
+[END] success=true steps=10 score=0.794 rewards=0.99,0.99,0.99,0.99,0.01,0.99,0.99,0.99,0.99,0.01
+[START] task=full-triage env=Email_RL model=qwen/qwen-2.5-72b-instruct
+[STEP] step=1 action=priority=medium,category=sales,route=sales_team reward=0.99 done=false error=null
+[STEP] step=2 action=priority=medium,category=security,route=security_team reward=0.99 done=false error=null
+[STEP] step=3 action=priority=urgent,category=security,route=security_team reward=0.01 done=false error=null
+[STEP] step=4 action=priority=urgent,category=security,route=security_team reward=0.01 done=false error=null
+[STEP] step=5 action=priority=high,category=billing,route=billing_team reward=0.38 done=false error=null
+[STEP] step=6 action=priority=medium,category=sales,route=sales_team reward=0.99 done=false error=null
+[STEP] step=7 action=priority=low,category=spam,route=trash reward=0.99 done=false error=null
+[STEP] step=8 action=priority=urgent,category=internal,route=human_review reward=0.48 done=false error=null
+[STEP] step=9 action=priority=high,category=billing,route=billing_team reward=0.38 done=false error=null
+[STEP] step=10 action=priority=medium,category=internal,route=inbox reward=0.99 done=true error=null
+[END] success=true steps=10 score=0.621 rewards=0.99,0.99,0.01,0.01,0.38,0.99,0.99,0.48,0.38,0.99
+[START] task=critical-escalation env=Email_RL model=qwen/qwen-2.5-72b-instruct
+[STEP] step=1 action=priority=low,category=billing,route=billing_team reward=0.99 done=false error=null
+[STEP] step=2 action=priority=medium,category=internal,route=inbox reward=0.99 done=false error=null
+[STEP] step=3 action=priority=high,category=security,route=security_team reward=0.99 done=false error=null
+[STEP] step=4 action=priority=high,category=sales,route=human_review reward=0.01 done=false error=null
+[STEP] step=5 action=priority=high,category=security,route=human_review reward=0.01 done=false error=null
+[STEP] step=6 action=priority=high,category=security,route=human_review reward=0.01 done=false error=null
+[STEP] step=7 action=priority=low,category=internal,route=inbox reward=0.99 done=false error=null
+[STEP] step=8 action=priority=low,category=newsletter,route=archive reward=0.99 done=false error=null
+[STEP] step=9 action=priority=low,category=billing,route=billing_team reward=0.99 done=false error=null
+[STEP] step=10 action=priority=low,category=spam,route=trash reward=0.99 done=true error=null
+[END] success=true steps=10 score=0.696 rewards=0.99,0.99,0.99,0.01,0.01,0.01,0.99,0.99,0.99,0.99
+[START] task=action-orchestrator env=Email_RL model=qwen/qwen-2.5-72b-instruct
+[STEP] step=1 action=priority=urgent,category=security,route=security_team reward=0.95 done=false error=null
+[STEP] step=2 action=priority=urgent,category=security,route=security_team reward=0.95 done=false error=null
+[STEP] step=3 action=priority=low,category=spam,route=trash reward=0.15 done=false error=null
+[STEP] step=4 action=priority=high,category=security,route=security_team reward=0.40 done=false error=null
+[STEP] step=5 action=priority=high,category=sales,route=sales_team reward=0.60 done=false error=null
+[STEP] step=6 action=priority=high,category=support,route=support_team reward=0.95 done=false error=null
+[STEP] step=7 action=priority=low,category=newsletter,route=archive reward=0.15 done=false error=null
+[STEP] step=8 action=priority=low,category=billing,route=billing_team reward=0.67 done=false error=null
+[STEP] step=9 action=priority=medium,category=sales,route=sales_team reward=0.69 done=false error=null
+[STEP] step=10 action=priority=high,category=security,route=security_team reward=0.75 done=true error=null
+[END] success=true steps=10 score=0.625 rewards=0.95,0.95,0.15,0.40,0.60,0.95,0.15,0.67,0.69,0.75
+[START] task=threat-assessment env=Email_RL model=qwen/qwen-2.5-72b-instruct
+[STEP] step=1 action=priority=high,category=internal,route=security_team reward=0.40 done=false error=null
+[STEP] step=2 action=priority=low,category=newsletter,route=archive reward=0.40 done=false error=null
+[STEP] step=3 action=priority=low,category=newsletter,route=archive reward=0.40 done=false error=null
+[STEP] step=4 action=priority=low,category=newsletter,route=archive reward=0.40 done=false error=null
+[STEP] step=5 action=priority=low,category=newsletter,route=archive reward=0.40 done=false error=null
+[STEP] step=6 action=priority=urgent,category=security,route=security_team reward=0.40 done=false error=null
+[STEP] step=7 action=priority=high,category=billing,route=billing_team reward=0.10 done=false error=null
+[STEP] step=8 action=priority=high,category=internal,route=human_review reward=0.40 done=false error=null
+[STEP] step=9 action=priority=low,category=internal,route=archive reward=0.40 done=false error=null
+[STEP] step=10 action=priority=medium,category=security,route=security_team reward=0.40 done=true error=null
+[END] success=true steps=10 score=0.370 rewards=0.40,0.40,0.40,0.40,0.40,0.40,0.10,0.40,0.40,0.40
